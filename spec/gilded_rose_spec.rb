@@ -220,7 +220,7 @@ RSpec.describe GildedRose do
   end
 
   context "Conjured Mana" do
-    xit "before sell date" do
+    it "before sell date" do
       gilded_rose = GildedRose.new(name: "Conjured Mana Cake", days_remaining: 5, quality: 10)
 
       gilded_rose.tick
@@ -228,7 +228,7 @@ RSpec.describe GildedRose do
       expect(gilded_rose).to have_attributes(days_remaining: 4, quality: 8)
     end
 
-    xit "before sell date at zero quality" do
+    it "before sell date at zero quality" do
       gilded_rose = GildedRose.new(name: "Conjured Mana Cake", days_remaining: 5, quality: 0)
 
       gilded_rose.tick
@@ -236,7 +236,7 @@ RSpec.describe GildedRose do
       expect(gilded_rose).to have_attributes(days_remaining: 4, quality: 0)
     end
 
-    xit "on sell date" do
+    it "on sell date" do
       gilded_rose = GildedRose.new(name: "Conjured Mana Cake", days_remaining: 0, quality: 10)
 
       gilded_rose.tick
@@ -244,7 +244,7 @@ RSpec.describe GildedRose do
       expect(gilded_rose).to have_attributes(days_remaining: -1, quality: 6)
     end
 
-    xit "on sell date at zero quality" do
+    it "on sell date at zero quality" do
       gilded_rose = GildedRose.new(name: "Conjured Mana Cake", days_remaining: 0, quality: 0)
 
       gilded_rose.tick
@@ -252,7 +252,7 @@ RSpec.describe GildedRose do
       expect(gilded_rose).to have_attributes(days_remaining: -1, quality: 0)
     end
 
-    xit "after sell date" do
+    it "after sell date" do
       gilded_rose = GildedRose.new(name: "Conjured Mana Cake", days_remaining: -10, quality: 10)
 
       gilded_rose.tick
@@ -260,7 +260,7 @@ RSpec.describe GildedRose do
       expect(gilded_rose).to have_attributes(days_remaining: -11, quality: 6)
     end
 
-    xit "after sell date at zero quality" do
+    it "after sell date at zero quality" do
       gilded_rose = GildedRose.new(name: "Conjured Mana Cake", days_remaining: -10, quality: 0)
 
       gilded_rose.tick
