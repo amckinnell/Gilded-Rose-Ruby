@@ -1,2 +1,3 @@
 ---
-BUNDLE_BIN: bin
+BUNDLE_BIN: "bin"
+BUNDLE_WITHOUT: "nothing"
